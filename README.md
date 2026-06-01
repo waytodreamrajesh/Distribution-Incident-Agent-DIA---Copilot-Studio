@@ -58,3 +58,86 @@ Pharmaceutical cold-chain logistics deviation triage is a high-stakes, manual bo
           Microsoft Dataverse Layer
    (rg_logisticsincident, rg_investigation,
         rg_pqias, rg_ecapas tables)
+```
+### Key Components
+
+| Component | Technology |
+| :--- | :--- |
+| **Multi-Agent Orchestration** | Microsoft Copilot Studio (Generative Orchestration) |
+| **Data Layer** | Microsoft Dataverse (Custom GxP Triage Tables) |
+| **Automation & Document Pipeline** | Power Automate Cloud Flows |
+| **Telemetry Grounding** | Dataverse Public Views & Schema Optimization |
+| **Output Engine** | Word Online (Business) Connector & Token Mapping |
+
+## 🤖 The Agents
+
+### Incident Agent (Hub Orchestrator)
+The central brain. Uses Microsoft Copilot Studio generative orchestration to dynamically analyze intent and route requests seamlessly to the specialized spokes based on clear routing descriptions and strict boundary constraints.
+
+### Intake Agent (Child)
+Handles front-end conversation logging. It collects structured compliance metadata (transit routes, locations, and logistics partners) and initiates conversational data collection parameters before writing records to Dataverse.
+
+### Compliance & SOP Sub-Agent (Child)
+Functions as a theoretical regulatory knowledge domain. It evaluates specific excursion boundaries (e.g., temperature threshold bands, 4-hour windows) purely against reference standard operating procedures without making live transactional modifications.
+
+### Investigation Agent (Connected)
+The high-utility lookup and generation hub. It aggregates relational metrics across tables (e.g., "how many investigations exist for this incident ID?") and passes localized variable tokens to Power Automate to dynamically render and share the finalized, downloadable document.
+
+---
+
+## 🚀 How to Set Up (Quick Start)
+
+The Distribution Incident Agent ecosystem is packaged completely within a Power Platform solution container for rapid deployment.
+
+### Prerequisites
+* A Power Platform environment with a Dataverse database enabled.
+* Premium licensing for Microsoft Copilot Studio and Power Automate.
+
+### Deployment Steps
+1. **Import the Solution:** Go to [make.powerapps.com](https://make.powerapps.com), select your environment, navigate to **Solutions**, click **Import solution**, and upload `solution/IncidentAgent_1_0_0_Managed.zip`.
+2. **Configure Connection References:** During the import process, link the connection references to your local Outlook, Word Online, and Dataverse connectors.
+3. **Publish All Components:** Once the import completes successfully, click **Publish all customizations** to ensure the child agents and cloud flows are fully synchronized.
+4. **Test the Pipeline:** Open the main `Incident Agent` within Copilot Studio and begin your conversational testing stream!
+
+---
+
+## 🏆 Agent Academy Curriculum Alignment
+
+| Mission | Concept | How Applied |
+| :--- | :--- | :--- |
+| **Mission 01 & 02** | Agent Instructions | Built specialized agents with strict step-by-step instructions and clear operational guardrails. |
+| **Mission 03** | Multi-Agent Systems | Leveraged the Hub-and-Spoke pattern to control traffic across 3 specialized sub-agents. |
+| **Mission 06** | AI Safety & Moderation | Configured a customized AI Safety Greeting Notice and custom fallbacks for security and audit readiness. |
+| **Mission 08** | Dataverse Grounding | Grounded lookups in multi-table Dataverse structures to provide natural language relational data auditing. |
+| **Mission 09** | Document Generation | Developed an end-to-end automated template rendering flow for formal file downloads. |
+
+---
+
+incident-agent-copilot/
+├── README.md
+├── solution/
+│   ├── AgentHackathon_1_0_0_1_managed.zip
+│   └── AgentHackathon_1_0_0_2_unmanaged.xip
+|
+├── docs/
+│   
+     └── system-architecture.png
+
+---
+
+## 🎥 Demo Video
+
+[Link to Your 3-5 Minute Demo Video Here]
+
+---
+
+## 👤 Author
+
+**Rajesh G.** *Senior Associate Analyst — Automation & Analytics Solutions* * **LinkedIn:** [https://www.linkedin.com/in/rajeshkva/]
+* **GitHub:** `@waytodreamrajesh`
+
+---
+
+## 📄 License
+
+This project is submitted as an official entry for the **Microsoft Agent Academy Hackathon 2026**. Built with ❤️ utilizing Microsoft Copilot Studio, Power Automate, and Microsoft Dataverse.
